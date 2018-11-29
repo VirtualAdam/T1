@@ -1,0 +1,39 @@
+sudo apt-get update
+sudo apt-get install -y git python-pip ufw
+sudo apt-get install -y python python-dev nmap python-setuptools python-gpiozero mosquitto mosquitto-clients
+sudo pip install virtualenv
+virtualenv venv
+source venv/bin/activate
+sudo pip install -r requirements.txt
+export FLASK_APP=web.py
+
+#Database
+flask db init
+flask db migrate -m "users table"
+flask db upgrade
+
+#Firewall
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow 443/tcp
+sudo ufw --force enable
+sudo ufw status
+
+#Setting up Nginx
+mkdir certs
+openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 \
+  -keyout certs/key.pem -out certs/cert.pem
+sudo rm /etc/nginx/sites-enabled/default
+sudo cp /home/pi/T1/configs/nginx_config_p80 /etc/nginx/sites-enabled/microblog
+# or sudo cp /home/pi/T1/configs/nginx_config_p443 /etc/nginx/sites-enabled/microblog
+
+Run gunicorn
+sudo pip install gunicorn
+gunicorn -b localhost:8000 -w 2 microblog:app
+
+#update
+git pull                              # download the new version
+sudo supervisorctl stop microblog     # stop the current server
+flask db upgrade                      # upgrade the database
+flask translate compile               # upgrade the translations
+sudo supervisorctl start microblog    # start a new server
