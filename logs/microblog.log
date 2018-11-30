@@ -1,10 +1,24 @@
-2018-11-26 15:24:04,533 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:77]
-2018-11-26 15:24:34,242 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:77]
-2018-11-26 15:24:52,603 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:77]
-2018-11-26 15:25:07,963 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:77]
-2018-11-26 15:25:24,088 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:77]
-2018-11-26 15:28:30,664 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:77]
-2018-11-26 15:34:18,218 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:77]
-2018-11-26 15:35:54,567 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:77]
-2018-11-29 00:02:33,015 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:77]
-2018-11-29 02:12:52,719 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:77]
+2018-11-30 19:09:48,204 ERROR: Exception on /switches/switch1/off [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/pi/T1/app/bar/routes.py", line 51, in do
+    data = subprocess.Popen(["/var/www/rfoutlet/codesend", outlet1_off, "-p", "3"], stdout=subprocess.PIPE).communicate()[0]
+  File "/usr/lib/python2.7/subprocess.py", line 390, in __init__
+    errread, errwrite)
+  File "/usr/lib/python2.7/subprocess.py", line 1024, in _execute_child
+    raise child_exception
+TypeError: execv() arg 2 must contain only strings
+2018-11-30 19:11:35,322 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-11-30 19:13:24,560 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-11-30 19:40:28,563 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-11-30 19:47:25,572 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-11-30 19:52:39,829 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]

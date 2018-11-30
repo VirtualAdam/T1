@@ -6,3 +6,4 @@
 *.pyc
 #logs
 *.log
+/logs/*.log
