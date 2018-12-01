@@ -2,3 +2,8 @@
 *.db
 #the migrations folder
 /migrations/**
+#compile files
+*.pyc
+#logs
+*.log
+/logs/*.log
