@@ -9,6 +9,8 @@ from app.models import User, Post
 from app.translate import translate
 from app.bar import bp
 import subprocess
+import paho.mqtt.publish as publish
+
 
 switch1="sw1"
 switch2="sw2" 
@@ -26,6 +28,8 @@ outlet4_on = "1334531"
 outlet4_off = "1334540"
 outlet5_on = "1340675"
 outlet5_off = "1340684"
+
+tel = {'jack': 4098, 'sape': 4139}
 
 @bp.before_app_request
 def before_request():
@@ -81,4 +85,4 @@ def do(deviceName, action):
         if action == "off":
             flash(_(actuator+' off'))
             data = subprocess.Popen(["/var/www/rfoutlet/codesend", outlet5_off, "-p", "3"], stdout=subprocess.PIPE).communicate()[0]
-    return render_template('switches.html')
+    return render_template('switches.html', title=_('Switches'))
