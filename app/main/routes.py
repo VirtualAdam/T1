@@ -22,8 +22,12 @@ def before_request():
 
 @bp.route('/', methods=['GET', 'POST'])
 @bp.route('/index', methods=['GET', 'POST'])
-@login_required
 def index():
+    return render_template('index.html', title=_('Home'))
+                           
+@bp.route('/garage', methods=['GET', 'POST'])
+@login_required
+def garage():
     form = PostForm()
     if form.validate_on_submit():
         language = guess_language(form.post.data)
@@ -34,15 +38,15 @@ def index():
         db.session.add(post)
         db.session.commit()
         flash(_('Your post is now live!'))
-        return redirect(url_for('main.index'))
+        return redirect(url_for('main.garage'))
     page = request.args.get('page', 1, type=int)
     posts = current_user.followed_posts().paginate(
         page, current_app.config['POSTS_PER_PAGE'], False)
-    next_url = url_for('main.index', page=posts.next_num) \
+    next_url = url_for('main.garage', page=posts.next_num) \
         if posts.has_next else None
-    prev_url = url_for('main.index', page=posts.prev_num) \
+    prev_url = url_for('main.garage', page=posts.prev_num) \
         if posts.has_prev else None
-    return render_template('index.html', title=_('Home'), form=form,
+    return render_template('garage.html', title=_('Garage'), form=form,
                            posts=posts.items, next_url=next_url,
                            prev_url=prev_url)
 
@@ -57,7 +61,7 @@ def explore():
         if posts.has_next else None
     prev_url = url_for('main.explore', page=posts.prev_num) \
         if posts.has_prev else None
-    return render_template('index.html', title=_('Explore'),
+    return render_template('garage.html', title=_('Sensors'),
                            posts=posts.items, next_url=next_url,
                            prev_url=prev_url)
 

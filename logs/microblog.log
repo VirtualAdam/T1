@@ -51,3 +51,60 @@ TypeError: execv() arg 2 must contain only strings
 2018-12-01 15:26:14,663 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
 2018-12-01 15:26:14,663 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
 2018-12-01 15:26:14,663 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-01 21:59:48,103 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-09 15:42:37,699 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-09 15:45:56,479 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-09 15:49:27,032 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-09 15:55:59,560 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-09 16:02:28,374 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-09 16:03:50,227 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-09 16:11:58,743 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-09 16:21:06,924 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-09 16:29:52,766 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-09 16:31:14,763 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-09 16:34:32,666 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-09 16:38:56,448 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-09 16:42:39,652 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-09 16:44:25,363 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-09 16:45:23,134 ERROR: Exception on /explore [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python2.7/dist-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/pi/T1/app/main/routes.py", line 66, in explore
+    prev_url=prev_url)
+  File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 134, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/pi/T1/app/templates/garage.html", line 5, in template
+    <h1>{{ _('Sensor status'}}</h1>
+TemplateSyntaxError: unexpected '}', expected ')'
+2018-12-09 16:47:52,547 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-09 16:49:12,440 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-09 16:53:07,800 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-09 16:56:50,317 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-10 17:29:37,338 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-10 17:57:51,024 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-10 17:58:50,332 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-10 18:15:40,029 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-10 18:16:05,085 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]

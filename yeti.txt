@@ -29,10 +29,28 @@ sudo cp /home/pi/T1/configs/nginx_config_p80 /etc/nginx/sites-enabled/microblog
 
 Run gunicorn
 sudo pip install gunicorn
-gunicorn -b localhost:8000 -w 2 microblog:app
+sudo gunicorn -b localhost:8000 -w 2 microblog:app
+
+supervisor
+sudo apt-get install -y supervisor
+cp /home/pi/T1/configs/microblog.conf /etc/supervisor/conf.d
+sudo supervisorctl reload
+
+#add power controll
+sudo git clone git://github.com/timleland/rfoutlet.git /var/www/rfoutlet
+sudo chown root.root /var/www/rfoutlet/codesend
+sudo chmod 4755 /var/www/rfoutlet/codesend
+git clone git://git.drogon.net/wiringPi
+cd wiringPi
+./build
+cd ..
+sudo rm -r wiringPi
 
 #update
 git pull                              # download the new version
+git checkout yeti
+sudo supervisorctl restart all
+
 sudo supervisorctl stop microblog     # stop the current server
 flask db upgrade                      # upgrade the database
 flask translate compile               # upgrade the translations
