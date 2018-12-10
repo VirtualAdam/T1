@@ -1,72 +1,4 @@
-2018-11-30 19:09:48,204 ERROR: Exception on /switches/switch1/off [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/pi/T1/app/bar/routes.py", line 51, in do
-    data = subprocess.Popen(["/var/www/rfoutlet/codesend", outlet1_off, "-p", "3"], stdout=subprocess.PIPE).communicate()[0]
-  File "/usr/lib/python2.7/subprocess.py", line 390, in __init__
-    errread, errwrite)
-  File "/usr/lib/python2.7/subprocess.py", line 1024, in _execute_child
-    raise child_exception
-TypeError: execv() arg 2 must contain only strings
-2018-11-30 19:11:35,322 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 19:13:24,560 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 19:40:28,563 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 19:47:25,572 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 19:52:39,829 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 14:04:21,358 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:00,847 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:02,219 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:02,219 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:06,163 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:06,163 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:06,163 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:07,515 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:07,515 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:07,515 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:07,515 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:08,847 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:08,847 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:08,847 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:08,847 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:08,847 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:11,197 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:11,197 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:11,197 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:11,197 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:11,197 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:11,197 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:14,663 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:14,663 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:14,663 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:14,663 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:14,663 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:14,663 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:14,663 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 21:59:48,103 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 15:42:37,699 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 15:45:56,479 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 15:49:27,032 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 15:55:59,560 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:02:28,374 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:03:50,227 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:11:58,743 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:21:06,924 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:29:52,766 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:31:14,763 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:34:32,666 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:38:56,448 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:42:39,652 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:44:25,363 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:45:23,134 ERROR: Exception on /explore [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
+2018-12-10 19:37:29,698 ERROR: Exception on /explore [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -82,29 +14,81 @@ Traceback (most recent call last):
     return func(*args, **kwargs)
   File "/home/pi/T1/app/main/routes.py", line 66, in explore
     prev_url=prev_url)
-  File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 134, in render_template
-    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/usr/local/lib/python2.7/dist-packages/jinja2/loaders.py", line 125, in load
-    code = environment.compile(source, name, filename)
-  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 591, in compile
-    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
   File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
-  File "/home/pi/T1/app/templates/garage.html", line 5, in template
-    <h1>{{ _('Sensor status'}}</h1>
-TemplateSyntaxError: unexpected '}', expected ')'
-2018-12-09 16:47:52,547 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:49:12,440 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:53:07,800 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:56:50,317 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-10 17:29:37,338 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-10 17:57:51,024 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-10 17:58:50,332 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-10 18:15:40,029 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-10 18:16:05,085 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+  File "/home/pi/T1/app/templates/garage.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/home/pi/T1/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/usr/local/lib/python2.7/dist-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/usr/local/lib/python2.7/dist-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/usr/local/lib/python2.7/dist-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/usr/local/lib/python2.7/dist-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/home/pi/T1/app/templates/base.html", line 48, in block "content"
+    {% block app_content %}{% endblock %}
+  File "/home/pi/T1/app/templates/garage.html", line 10, in block "app_content"
+    {% include '_post.html' %}
+  File "/home/pi/T1/app/templates/_post.html", line 5, in top-level template code
+    <img src="{{ post.author.avatar(70) }}" />
+UndefinedError: 'None' has no attribute 'avatar'
+2018-12-10 19:38:11,789 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-10 19:48:52,137 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-10 19:52:15,346 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-10 19:52:44,596 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-10 19:52:52,207 ERROR: Exception on /explore [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python2.7/dist-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/pi/T1/app/main/routes.py", line 66, in explore
+    prev_url=prev_url)
+  File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/pi/T1/app/templates/garage.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/home/pi/T1/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/usr/local/lib/python2.7/dist-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/usr/local/lib/python2.7/dist-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/usr/local/lib/python2.7/dist-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/usr/local/lib/python2.7/dist-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/home/pi/T1/app/templates/base.html", line 48, in block "content"
+    {% block app_content %}{% endblock %}
+  File "/home/pi/T1/app/templates/garage.html", line 10, in block "app_content"
+    {% include '_post.html' %}
+  File "/home/pi/T1/app/templates/_post.html", line 5, in top-level template code
+    <img src="{{ post.author.avatar(70) }}" />
+UndefinedError: 'None' has no attribute 'avatar'
+2018-12-10 19:54:05,162 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-10 20:01:24,325 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-10 20:03:25,207 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-10 20:04:29,713 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]

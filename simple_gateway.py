@@ -38,7 +38,11 @@ def on_connect(client, userdata, flags, rc):
 
 def on_message_garage(client, userdata, msg):
     print("recieved: " + msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
-    posit(msg.payload)
+    top = msg.topic.decode('UTF-8')
+    topic_parts = top.split('/')
+    caller = topic_parts[1]
+    print caller
+    posit(msg.payload,caller)
     
 def on_message_keepalive(client, userdata, msg):
     top=msg.payload
@@ -54,7 +58,8 @@ def on_message(client, userdata, msg):
             # lex/customer_id/gateway_id/thing_id/datatype/ timestamp data
 
 #boot
-localip = find_ip()
+#localip = find_ip()
+localip = "192.168.1.4"
 print localip
 print "booted"
 
