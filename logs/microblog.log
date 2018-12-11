@@ -94,3 +94,6 @@ UndefinedError: 'None' has no attribute 'avatar'
 2018-12-10 20:04:29,713 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
 2018-12-11 02:37:25,134 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
 2018-12-11 02:41:23,143 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-11 02:57:03,080 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-11 03:03:25,354 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-11 03:05:00,594 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
