@@ -44,6 +44,14 @@ def on_message_garage(client, userdata, msg):
     print caller
     posit(msg.payload,caller)
     
+def on_message_startup(client, userdata, msg):
+    print("recieved: " + msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
+    top = msg.topic.decode('UTF-8')
+    topic_parts = top.split('/')
+    if msg.payload == "request":
+        publish.single("gateway/yes", str(localip), hostname=localip, qos=0)
+    
+    
 def on_message_keepalive(client, userdata, msg):
     top=msg.payload
     #dont do anything
@@ -58,8 +66,7 @@ def on_message(client, userdata, msg):
             # lex/customer_id/gateway_id/thing_id/datatype/ timestamp data
 
 #boot
-#localip = find_ip()
-localip = "192.168.1.4"
+localip = find_ip()
 print localip
 print "booted"
 
@@ -67,6 +74,7 @@ print "booted"
 client = mqtt.Client()
 client.on_connect = on_connect
 client.message_callback_add("lex/#", on_message_garage)
+client.message_callback_add("gateway/#", on_message_startup)
 client.on_message = on_message
 client.subscribe("#", 0)
 client.connect(localip, 1883, 60)
