@@ -49,7 +49,9 @@ def on_message_startup(client, userdata, msg):
     top = msg.topic.decode('UTF-8')
     topic_parts = top.split('/')
     if msg.payload == "request":
+        time.sleep(3)
         publish.single("gateway/yes", str(localip), hostname=localip, qos=0)
+        print "published"
     
     
 def on_message_keepalive(client, userdata, msg):
