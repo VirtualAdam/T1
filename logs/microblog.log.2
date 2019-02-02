@@ -1,4 +1,4 @@
-2018-11-30 19:09:48,204 ERROR: Exception on /switches/switch1/off [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
+2018-12-11 15:43:38,719 ERROR: Exception on /static/bootstrap.bundle.min.js [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -6,67 +6,58 @@ Traceback (most recent call last):
     rv = self.handle_user_exception(e)
   File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1718, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/pi/T1/app/bar/routes.py", line 51, in do
-    data = subprocess.Popen(["/var/www/rfoutlet/codesend", outlet1_off, "-p", "3"], stdout=subprocess.PIPE).communicate()[0]
-  File "/usr/lib/python2.7/subprocess.py", line 390, in __init__
-    errread, errwrite)
-  File "/usr/lib/python2.7/subprocess.py", line 1024, in _execute_child
-    raise child_exception
-TypeError: execv() arg 2 must contain only strings
-2018-11-30 19:11:35,322 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 19:13:24,560 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 19:40:28,563 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 19:47:25,572 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 19:52:39,829 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 14:04:21,358 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:00,847 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:02,219 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:02,219 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:06,163 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:06,163 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:06,163 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:07,515 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:07,515 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:07,515 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:07,515 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:08,847 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:08,847 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:08,847 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:08,847 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:08,847 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:11,197 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:11,197 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:11,197 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:11,197 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:11,197 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:11,197 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:14,663 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:14,663 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:14,663 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:14,663 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:14,663 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:14,663 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 15:26:14,663 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-01 21:59:48,103 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 15:42:37,699 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 15:45:56,479 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 15:49:27,032 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 15:55:59,560 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:02:28,374 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:03:50,227 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:11:58,743 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:21:06,924 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:29:52,766 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:31:14,763 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:34:32,666 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:38:56,448 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:42:39,652 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:44:25,363 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:45:23,134 ERROR: Exception on /explore [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1811, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2087, in preprocess_request
+    rv = func()
+  File "/home/pi/T1/app/bar/routes.py", line 36, in before_request
+    if current_user.is_authenticated:
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/local.py", line 306, in _get_current_object
+    return self.__local()
+  File "/usr/local/lib/python2.7/dist-packages/flask_login/utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/usr/local/lib/python2.7/dist-packages/flask_login/utils.py", line 302, in _get_user
+    current_app.login_manager._load_user()
+  File "/usr/local/lib/python2.7/dist-packages/flask_login/login_manager.py", line 317, in _load_user
+    return self.reload_user()
+  File "/usr/local/lib/python2.7/dist-packages/flask_login/login_manager.py", line 279, in reload_user
+    user = self.user_callback(user_id)
+  File "/home/pi/T1/app/models.py", line 127, in load_user
+    return User.query.get(int(id))
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/query.py", line 864, in get
+    return self._get_impl(ident, loading.load_on_ident)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/query.py", line 897, in _get_impl
+    return fallback_fn(self, key)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/loading.py", line 223, in load_on_ident
+    return q.one()
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/query.py", line 2814, in one
+    ret = self.one_or_none()
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/query.py", line 2784, in one_or_none
+    ret = list(self)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/query.py", line 2855, in __iter__
+    return self._execute_and_instances(context)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/query.py", line 2878, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/sql/elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 1189, in _execute_context
+    context)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 1182, in _execute_context
+    context)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (sqlite3.OperationalError) database is locked [SQL: u'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen \nFROM user \nWHERE user.id = ?'] [parameters: (1,)]
+2018-12-11 15:43:38,723 ERROR: Exception on /home/pi/T1/app/static/bootstrap.min.css [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -74,40 +65,67 @@ Traceback (most recent call last):
     rv = self.handle_user_exception(e)
   File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1718, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/usr/local/lib/python2.7/dist-packages/flask_login/utils.py", line 228, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/pi/T1/app/main/routes.py", line 66, in explore
-    prev_url=prev_url)
-  File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 134, in render_template
-    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/usr/local/lib/python2.7/dist-packages/jinja2/loaders.py", line 125, in load
-    code = environment.compile(source, name, filename)
-  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 591, in compile
-    self.handle_exception(exc_info, source_hint=source_hint)
-  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/pi/T1/app/templates/garage.html", line 5, in template
-    <h1>{{ _('Sensor status'}}</h1>
-TemplateSyntaxError: unexpected '}', expected ')'
-2018-12-09 16:47:52,547 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:49:12,440 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:53:07,800 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-09 16:56:50,317 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-10 17:29:37,338 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-10 17:57:51,024 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-10 17:58:50,332 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-10 18:15:40,029 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-10 18:16:05,085 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-10 19:32:52,149 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-10 19:37:17,438 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-10 19:52:44,596 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1811, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2087, in preprocess_request
+    rv = func()
+  File "/home/pi/T1/app/bar/routes.py", line 38, in before_request
+    db.session.commit()
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/scoping.py", line 157, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/session.py", line 906, in commit
+    self.transaction.commit()
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/session.py", line 461, in commit
+    self._prepare_impl()
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/session.py", line 2177, in flush
+    self._flush(objects)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/session.py", line 2297, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/util/langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/session.py", line 2261, in _flush
+    flush_context.execute()
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/unitofwork.py", line 389, in execute
+    rec.execute(self)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/unitofwork.py", line 548, in execute
+    uow
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/persistence.py", line 177, in save_obj
+    mapper, table, update)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/persistence.py", line 737, in _emit_update_statements
+    execute(statement, multiparams)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/sql/elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 1189, in _execute_context
+    context)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 1182, in _execute_context
+    context)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (sqlite3.OperationalError) database is locked [SQL: u'UPDATE user SET last_seen=? WHERE user.id = ?'] [parameters: ('2018-12-11 15:43:33.712834', 1)]
+2018-12-11 15:47:05,489 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-11 15:49:05,642 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-11 15:50:49,731 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-11 15:53:24,019 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-11 16:04:38,743 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-11 19:10:46,609 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-11 19:12:19,885 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-19 17:20:32,927 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-19 17:23:20,684 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-19 17:24:32,145 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2019-02-02 07:36:38,550 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2019-02-02 07:36:59,469 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2019-02-02 07:37:09,078 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2019-02-02 07:38:08,889 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2019-02-02 11:11:32,850 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2019-02-02 11:15:57,861 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2019-02-02 12:21:28,747 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]

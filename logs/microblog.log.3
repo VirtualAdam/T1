@@ -1,37 +1,4 @@
-2018-11-26 15:24:04,533 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:77]
-2018-11-26 15:24:34,242 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:77]
-2018-11-26 15:24:52,603 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:77]
-2018-11-26 15:25:07,963 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:77]
-2018-11-26 15:25:24,088 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:77]
-2018-11-26 15:28:30,664 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:77]
-2018-11-26 15:34:18,218 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:77]
-2018-11-26 15:35:54,567 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:77]
-2018-11-29 00:02:33,015 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:77]
-2018-11-29 02:12:52,719 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:77]
-2018-11-30 16:23:23,812 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:77]
-2018-11-30 16:57:19,872 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 16:58:01,761 ERROR: Exception on / [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1811, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2087, in preprocess_request
-    rv = func()
-  File "/home/pi/T1/app/bar/routes.py", line 18, in before_request
-    g.search_form = SearchForm()
-NameError: global name 'SearchForm' is not defined
-2018-11-30 16:59:12,154 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 17:00:56,959 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 17:03:08,012 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 17:04:24,131 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 17:05:53,057 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 17:28:02,707 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 17:28:39,527 ERROR: Exception on /ledRed/off [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
+2018-12-10 19:37:29,698 ERROR: Exception on /explore [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -43,8 +10,42 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-TypeError: do() got an unexpected keyword argument 'devicename'
-2018-11-30 17:28:43,917 ERROR: Exception on /ledRed/on [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
+  File "/usr/local/lib/python2.7/dist-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/pi/T1/app/main/routes.py", line 66, in explore
+    prev_url=prev_url)
+  File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/pi/T1/app/templates/garage.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/home/pi/T1/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/usr/local/lib/python2.7/dist-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/usr/local/lib/python2.7/dist-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/usr/local/lib/python2.7/dist-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/usr/local/lib/python2.7/dist-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/home/pi/T1/app/templates/base.html", line 48, in block "content"
+    {% block app_content %}{% endblock %}
+  File "/home/pi/T1/app/templates/garage.html", line 10, in block "app_content"
+    {% include '_post.html' %}
+  File "/home/pi/T1/app/templates/_post.html", line 5, in top-level template code
+    <img src="{{ post.author.avatar(70) }}" />
+UndefinedError: 'None' has no attribute 'avatar'
+2018-12-10 19:38:11,789 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-10 19:48:52,137 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-10 19:52:15,346 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-10 19:52:44,596 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-10 19:52:52,207 ERROR: Exception on /explore [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -56,78 +57,44 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-TypeError: do() got an unexpected keyword argument 'devicename'
-2018-11-30 17:35:03,016 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 17:37:08,694 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 17:39:56,741 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 17:40:16,338 ERROR: Exception on /switches/ledRed/on [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1718, in handle_user_exception
+  File "/usr/local/lib/python2.7/dist-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/pi/T1/app/main/routes.py", line 66, in explore
+    prev_url=prev_url)
+  File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-TypeError: do() got an unexpected keyword argument 'devicename'
-2018-11-30 17:41:48,460 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 17:41:58,389 ERROR: Exception on /switches/ledRed/on [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/pi/T1/app/bar/routes.py", line 31, in do
-    actuator = ledRed
-NameError: global name 'ledRed' is not defined
-2018-11-30 17:43:52,947 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 17:43:57,278 ERROR: Exception on /switches/ledRed/on [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/pi/T1/app/bar/routes.py", line 43, in do
-    ledRedSts = GPIO.input(ledRed)
-NameError: global name 'GPIO' is not defined
-2018-11-30 17:44:56,964 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 18:14:33,500 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 18:38:29,483 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 18:39:57,997 ERROR: Exception on /switches/switch1/off [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/pi/T1/app/bar/routes.py", line 57, in do
-    data = subprocess.Popen(["/var/www/rfoutlet/codesend", "1332540", "-p", "3"], stdout=subprocess.PIPE).communicate()[0]
-NameError: global name 'subprocess' is not defined
-2018-11-30 18:40:43,518 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 18:47:24,872 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 18:50:37,919 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 18:52:57,429 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 18:57:02,181 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 18:59:24,546 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 19:02:29,570 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-11-30 19:09:38,079 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+  File "/home/pi/T1/app/templates/garage.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/home/pi/T1/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/usr/local/lib/python2.7/dist-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/usr/local/lib/python2.7/dist-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/usr/local/lib/python2.7/dist-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/usr/local/lib/python2.7/dist-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/home/pi/T1/app/templates/base.html", line 48, in block "content"
+    {% block app_content %}{% endblock %}
+  File "/home/pi/T1/app/templates/garage.html", line 10, in block "app_content"
+    {% include '_post.html' %}
+  File "/home/pi/T1/app/templates/_post.html", line 5, in top-level template code
+    <img src="{{ post.author.avatar(70) }}" />
+UndefinedError: 'None' has no attribute 'avatar'
+2018-12-10 19:54:05,162 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-10 20:01:24,325 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-10 20:03:25,207 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-10 20:04:29,713 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-11 02:37:25,134 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-11 02:41:23,143 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-11 02:57:03,080 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-11 03:03:25,354 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-11 03:05:00,594 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2018-12-11 15:43:31,699 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]

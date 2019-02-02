@@ -15,7 +15,10 @@
                 <br>
                 <span id="post{{ post.id }}">{{ post.photo_id }}</span>
                 <br>
-                <img src="http://192.168.1.35:8040/data/post{{ post.id }}" class="img-fluid" alt="...">{{ post.photo_id }}</span>
+                <img src={{ img_url }}{{ post.photo_id }} class="img-fluid" alt="...">
+                <br>
+                <h1>Hello, {{ img_url }}{{ post.body }}</h1>
+                                
                 {% if post.language and post.language != g.locale %}
                 <br><br>
                 <span id="translation{{ post.id }}">

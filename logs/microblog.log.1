@@ -1,4 +1,4 @@
-2018-12-10 19:37:29,698 ERROR: Exception on /explore [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
+2019-02-02 12:21:38,217 ERROR: Exception on /explore [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,8 +12,26 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/usr/local/lib/python2.7/dist-packages/flask_login/utils.py", line 228, in decorated_view
     return func(*args, **kwargs)
-  File "/home/pi/T1/app/main/routes.py", line 66, in explore
-    prev_url=prev_url)
+  File "/home/pi/T1/app/main/routes.py", line 59, in explore
+    img_url = "http/::192.168.1.35:8040/data/"+post.id
+NameError: global name 'post' is not defined
+2019-02-02 12:22:43,512 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2019-02-02 12:22:57,474 ERROR: Exception on /explore [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python2.7/dist-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/pi/T1/app/main/routes.py", line 69, in explore
+    prev_url=prev_url, img_url=img_url)
   File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 135, in render_template
     context, ctx.app)
   File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 117, in _render
@@ -38,14 +56,13 @@ Traceback (most recent call last):
     {% block app_content %}{% endblock %}
   File "/home/pi/T1/app/templates/garage.html", line 10, in block "app_content"
     {% include '_post.html' %}
-  File "/home/pi/T1/app/templates/_post.html", line 5, in top-level template code
-    <img src="{{ post.author.avatar(70) }}" />
-UndefinedError: 'None' has no attribute 'avatar'
-2018-12-10 19:38:11,789 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-10 19:48:52,137 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-10 19:52:15,346 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-10 19:52:44,596 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-10 19:52:52,207 ERROR: Exception on /explore [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
+  File "/home/pi/T1/app/templates/_post.html", line 19, in top-level template code
+    <h1>Hello, {{ photo_url.photo_id }}!</h1>
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'photo_url' is undefined
+2019-02-02 12:24:00,598 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2019-02-02 12:24:03,035 ERROR: Exception on /explore [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -59,8 +76,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/usr/local/lib/python2.7/dist-packages/flask_login/utils.py", line 228, in decorated_view
     return func(*args, **kwargs)
-  File "/home/pi/T1/app/main/routes.py", line 66, in explore
-    prev_url=prev_url)
+  File "/home/pi/T1/app/main/routes.py", line 69, in explore
+    prev_url=prev_url, img_url=img_url)
   File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 135, in render_template
     context, ctx.app)
   File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 117, in _render
@@ -85,16 +102,22 @@ Traceback (most recent call last):
     {% block app_content %}{% endblock %}
   File "/home/pi/T1/app/templates/garage.html", line 10, in block "app_content"
     {% include '_post.html' %}
-  File "/home/pi/T1/app/templates/_post.html", line 5, in top-level template code
-    <img src="{{ post.author.avatar(70) }}" />
-UndefinedError: 'None' has no attribute 'avatar'
-2018-12-10 19:54:05,162 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-10 20:01:24,325 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-10 20:03:25,207 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-10 20:04:29,713 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-11 02:37:25,134 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-11 02:41:23,143 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-11 02:57:03,080 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-11 03:03:25,354 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-11 03:05:00,594 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
-2018-12-11 15:43:31,699 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+  File "/home/pi/T1/app/templates/_post.html", line 19, in top-level template code
+    <h1>Hello, {{ img_url.photo_id }}!</h1>
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 434, in getattr
+    return obj[attribute]
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/sql/operators.py", line 371, in __getitem__
+    return self.operate(getitem, index)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/sql/elements.py", line 686, in operate
+    return op(self.comparator, *other, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/sql/operators.py", line 371, in __getitem__
+    return self.operate(getitem, index)
+  File "<string>", line 1, in <lambda>
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/sql/type_api.py", line 63, in operate
+    return o[0](self.expr, op, *(other + o[1:]), **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/sql/default_comparator.py", line 177, in _getitem_impl
+    _unsupported_impl(expr, op, other, **kw)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/sql/default_comparator.py", line 182, in _unsupported_impl
+    "this expression" % op.__name__)
+NotImplementedError: Operator 'getitem' is not supported on this expression
+2019-02-02 12:25:40,314 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
