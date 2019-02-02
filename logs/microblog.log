@@ -122,3 +122,7 @@ OperationalError: (sqlite3.OperationalError) database is locked [SQL: u'UPDATE u
 2018-12-19 17:20:32,927 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
 2018-12-19 17:23:20,684 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
 2018-12-19 17:24:32,145 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2019-02-02 07:36:38,550 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2019-02-02 07:36:59,469 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2019-02-02 07:37:09,078 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2019-02-02 07:38:08,889 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
