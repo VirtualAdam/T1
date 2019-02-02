@@ -12,6 +12,8 @@
                     username=user_link, when=moment(post.timestamp).fromNow()) }}
                 <br>
                 <span id="post{{ post.id }}">{{ post.body }}</span>
+                <br>
+                <span id="post{{ post.id }}">{{ post.photo_id }}</span>
                 {% if post.language and post.language != g.locale %}
                 <br><br>
                 <span id="translation{{ post.id }}">

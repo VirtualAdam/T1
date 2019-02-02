@@ -41,8 +41,12 @@ def on_message_garage(client, userdata, msg):
     top = msg.topic.decode('UTF-8')
     topic_parts = top.split('/')
     caller = topic_parts[1]
+    pay = msg.payload.decode('UTF-8')
+    payload_parts = pay.split('-')
+    message = payload_parts[0]
+    photo_id = payload_parts[1]
     print caller
-    posit(msg.payload,caller)
+    posit(message,caller,photo_id)
     
 def on_message_startup(client, userdata, msg):
     print("recieved: " + msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
