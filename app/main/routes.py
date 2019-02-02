@@ -29,6 +29,7 @@ def index():
 @bp.route('/garage', methods=['GET', 'POST'])
 @login_required
 def garage():
+    
     form = PostForm()
     if form.validate_on_submit():
         language = guess_language(form.post.data)

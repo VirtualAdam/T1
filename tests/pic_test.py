@@ -28,4 +28,4 @@ if __name__ == '__main__':
 	time.sleep(2)
 	send_pic_to_server(picture_id, server_id)
 	time.sleep(3)
-	delete_pic_on_disk(picture_id)
+	#delete_pic_on_disk(picture_id)
