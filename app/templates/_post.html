@@ -1,9 +1,6 @@
     <table class="table table-hover">
         <tr>
-            <td width="70px">
-                <a href="{{ url_for('main.user', username=post.author.username) }}">
-                    <img src="{{ post.author.avatar(70) }}" />
-                </a>
+            <td width="15px">
             </td>
             <td>
                 {% set user_link %}
@@ -11,10 +8,14 @@
                         {{ post.author.username }}
                     </a>
                 {% endset %}
-                {{ _('%(username)s said %(when)s',
+                {{ _('%(username)s at %(when)s',
                     username=user_link, when=moment(post.timestamp).fromNow()) }}
                 <br>
                 <span id="post{{ post.id }}">{{ post.body }}</span>
+                <br>
+                <span id="post{{ post.id }}">{{ post.photo_id }}</span>
+                <br>
+                <img src={{ img_url }}{{ post.photo_id }} class="img-fluid" alt="...">
                 {% if post.language and post.language != g.locale %}
                 <br><br>
                 <span id="translation{{ post.id }}">

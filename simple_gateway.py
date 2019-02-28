@@ -38,7 +38,25 @@ def on_connect(client, userdata, flags, rc):
 
 def on_message_garage(client, userdata, msg):
     print("recieved: " + msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
-    posit(msg.payload)
+    top = msg.topic.decode('UTF-8')
+    topic_parts = top.split('/')
+    caller = topic_parts[1]
+    pay = msg.payload.decode('UTF-8')
+    payload_parts = pay.split('-')
+    message = payload_parts[0]
+    photo_id = payload_parts[1]
+    print caller
+    posit(message,caller,photo_id)
+    
+def on_message_startup(client, userdata, msg):
+    print("recieved: " + msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
+    top = msg.topic.decode('UTF-8')
+    topic_parts = top.split('/')
+    if msg.payload == "request":
+        time.sleep(3)
+        publish.single("gateway/yes", str(localip), hostname=localip, qos=0)
+        print "published"
+    
     
 def on_message_keepalive(client, userdata, msg):
     top=msg.payload
@@ -62,6 +80,7 @@ print "booted"
 client = mqtt.Client()
 client.on_connect = on_connect
 client.message_callback_add("lex/#", on_message_garage)
+client.message_callback_add("gateway/#", on_message_startup)
 client.on_message = on_message
 client.subscribe("#", 0)
 client.connect(localip, 1883, 60)

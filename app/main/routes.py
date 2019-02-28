@@ -22,12 +22,14 @@ def before_request():
 
 @bp.route('/', methods=['GET', 'POST'])
 @bp.route('/index', methods=['GET', 'POST'])
+@login_required
 def index():
     return render_template('index.html', title=_('Home'))
                            
 @bp.route('/garage', methods=['GET', 'POST'])
 @login_required
 def garage():
+    
     form = PostForm()
     if form.validate_on_submit():
         language = guess_language(form.post.data)
@@ -54,6 +56,8 @@ def garage():
 @bp.route('/explore')
 @login_required
 def explore():
+    #img_url = "http/::192.168.1.35:8040/data/"+Post.id
+    img_url = "http://192.168.1.35:8040/data/"
     page = request.args.get('page', 1, type=int)
     posts = Post.query.order_by(Post.timestamp.desc()).paginate(
         page, current_app.config['POSTS_PER_PAGE'], False)
@@ -63,7 +67,7 @@ def explore():
         if posts.has_prev else None
     return render_template('garage.html', title=_('Sensors'),
                            posts=posts.items, next_url=next_url,
-                           prev_url=prev_url)
+                           prev_url=prev_url, img_url=img_url)
 
 
 @bp.route('/user/<username>')
