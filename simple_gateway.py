@@ -10,6 +10,7 @@ import sys
 import os
 import time
 import datetime
+import subprocess
 import paho.mqtt.publish as publish
 
 #=======================
@@ -56,7 +57,13 @@ def on_message_startup(client, userdata, msg):
         time.sleep(3)
         publish.single("gateway/yes", str(localip), hostname=localip, qos=0)
         print "published"
-    
+
+def on_message_power(client, userdata, msg):
+    print("recieved: " + msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
+    top = msg.topic.decode('UTF-8')
+    topic_parts = top.split('/')
+    data = subprocess.Popen(["/var/www/rfoutlet/codesend", msg.pyload, "-p", "3"], stdout=subprocess.PIPE).communicate()[0]
+    print "switched"    
     
 def on_message_keepalive(client, userdata, msg):
     top=msg.payload
@@ -81,6 +88,7 @@ client = mqtt.Client()
 client.on_connect = on_connect
 client.message_callback_add("lex/#", on_message_garage)
 client.message_callback_add("gateway/#", on_message_startup)
+client.message_callback_add("switches/#", on_message_power)
 client.on_message = on_message
 client.subscribe("#", 0)
 client.connect(localip, 1883, 60)

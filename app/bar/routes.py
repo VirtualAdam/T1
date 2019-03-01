@@ -29,7 +29,10 @@ outlet4_off = "1334540"
 outlet5_on = "1340675"
 outlet5_off = "1340684"
 
+gateway = '192.168.1.7'
+
 tel = {'jack': 4098, 'sape': 4139}
+
 
 @bp.before_app_request
 def before_request():
@@ -49,40 +52,40 @@ def do(deviceName, action):
         actuator = switch1
         if action == "on":
             flash(_(actuator+' on'))
-            data = subprocess.Popen(["/var/www/rfoutlet/codesend", outlet1_on, "-p", "3"], stdout=subprocess.PIPE).communicate()[0]
+            publish.single("switches", outlet1_on, hostname=gateway, qos=0)
         if action == "off":
             flash(_(actuator+' off'))
-            data = subprocess.Popen(["/var/www/rfoutlet/codesend", outlet1_off, "-p", "3"], stdout=subprocess.PIPE).communicate()[0]
+            publish.single("switches", outlet1_off, hostname=gateway, qos=0)
     if deviceName == "switch2":
         actuator = switch2
         if action == "on":
             flash(_(actuator+' on'))
-            data = subprocess.Popen(["/var/www/rfoutlet/codesend", outlet2_on, "-p", "3"], stdout=subprocess.PIPE).communicate()[0]
+            publish.single("switches", outlet2_on, hostname=gateway, qos=0)
         if action == "off":
             flash(_(actuator+' off'))
-            data = subprocess.Popen(["/var/www/rfoutlet/codesend", outlet2_off, "-p", "3"], stdout=subprocess.PIPE).communicate()[0]
+            publish.single("switches", outlet2_off, hostname=gateway, qos=0)
     if deviceName == "switch3":
         actuator = switch3
         if action == "on":
             flash(_(actuator+' on'))
-            data = subprocess.Popen(["/var/www/rfoutlet/codesend", outlet3_on, "-p", "3"], stdout=subprocess.PIPE).communicate()[0]
+            publish.single("switches", outlet3_on, hostname=gateway, qos=0)
         if action == "off":
             flash(_(actuator+' off'))
-            data = subprocess.Popen(["/var/www/rfoutlet/codesend", outlet3_off, "-p", "3"], stdout=subprocess.PIPE).communicate()[0]
+            publish.single("switches", outlet3_off, hostname=gateway, qos=0)
     if deviceName == "switch4":
         actuator = switch4
         if action == "on":
             flash(_(actuator+' on'))
-            data = subprocess.Popen(["/var/www/rfoutlet/codesend", outlet4_on, "-p", "3"], stdout=subprocess.PIPE).communicate()[0]
+            publish.single("switches", outlet4_on, hostname=gateway, qos=0)
         if action == "off":
             flash(_(actuator+' off'))
-            data = subprocess.Popen(["/var/www/rfoutlet/codesend", outlet4_off, "-p", "3"], stdout=subprocess.PIPE).communicate()[0]
+            publish.single("switches", outlet4_off, hostname=gateway, qos=0)
     if deviceName == "switch5":
         actuator = switch5
         if action == "on":
             flash(_(actuator+' on'))
-            data = subprocess.Popen(["/var/www/rfoutlet/codesend", outlet5_on, "-p", "3"], stdout=subprocess.PIPE).communicate()[0]
+            publish.single("switches", outlet5_on, hostname=gateway, qos=0)
         if action == "off":
             flash(_(actuator+' off'))
-            data = subprocess.Popen(["/var/www/rfoutlet/codesend", outlet5_off, "-p", "3"], stdout=subprocess.PIPE).communicate()[0]
+            publish.single("switches", outlet5_off, hostname=gateway, qos=0)
     return render_template('switches.html', title=_('Switches'))
