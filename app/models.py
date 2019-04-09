@@ -138,3 +138,16 @@ class Post(SearchableMixin, db.Model):
 
     def __repr__(self):
         return '<Post {}>'.format(self.body)
+
+class Times(SearchableMixin, db.Model):
+    __searchable__ = ['body']
+    id = db.Column(db.Integer, primary_key=True)
+    switch1on1 = db.Column(db.String(8))
+    switch1off1 = db.Column(db.String(8))
+    switch1on2 = db.Column(db.String(8))
+    switch1off2 = db.Column(db.String(8))
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    language = db.Column(db.String(5))
+
+    def __repr__(self):
+        return '<Post {}>'.format(self.tempo)

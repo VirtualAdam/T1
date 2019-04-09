@@ -123,3 +123,25 @@ NotImplementedError: Operator 'getitem' is not supported on this expression
 2019-02-02 12:42:05,199 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
 2019-02-02 12:44:33,142 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
 2019-02-02 12:45:25,556 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2019-04-07 13:43:44,258 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2019-04-07 13:46:14,166 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2019-04-07 13:46:28,517 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2019-04-07 13:46:42,709 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2019-04-08 14:56:13,569 INFO: Microblog startup [in /home/pi/T1/app/__init__.py:80]
+2019-04-08 14:56:32,454 ERROR: Exception on /timeswitches [GET] [in /home/pi/.local/lib/python2.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/pi/.local/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/pi/.local/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/pi/.local/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/pi/.local/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python2.7/dist-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/pi/T1/app/main/routes.py", line 164, in timeswitches
+    form = TimeForm()
+NameError: global name 'TimeForm' is not defined

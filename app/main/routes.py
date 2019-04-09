@@ -5,10 +5,11 @@ from flask_login import current_user, login_required
 from flask_babel import _, get_locale
 from guess_language import guess_language
 from app import db
-from app.main.forms import EditProfileForm, PostForm, SearchForm
-from app.models import User, Post
+from app.main.forms import EditProfileForm, PostForm, SearchForm, TimeForm
+from app.models import User, Post, Times
 from app.translate import translate
 from app.main import bp
+import sqlalchemy
 
 
 @bp.before_app_request
@@ -156,3 +157,25 @@ def search():
         if page > 1 else None
     return render_template('search.html', title=_('Search'), posts=posts,
                            next_url=next_url, prev_url=prev_url)
+
+
+@bp.route('/timeswitches', methods=['GET', 'POST'])
+@login_required
+def timeswitches():
+    form = TimeForm()
+    recent_time = Times.query.order_by(sqlalchemy.desc(Times.timestamp)).first()
+    if form.validate_on_submit():
+        #tid = Times.query.get(1)
+        times = Times(switch1on1=form.time1.data, switch1off1=form.time2.data)
+        db.session.add(times)
+        db.session.commit()
+        flash(_('Your times have been set!'))
+        return redirect(url_for('main.timeswitches'))
+    return render_template('timeswitches.html', form=form, recent_time=recent_time)
+
+@bp.route('/timeswitchesout', methods=['GET', 'POST'])
+@login_required
+def timeswitchesout():
+    time = Times.query.order_by(sqlalchemy.desc(Times.timestamp)).first()
+    #time = Times.query.get(1)
+    return render_template('timeswitchesout.html', time=time)
