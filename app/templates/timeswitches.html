@@ -2,11 +2,16 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-    <h1>Control</h1>
-	Switch 1 on : <b>{{ recent_time.switch1on1 }}</b>
+    <h1>Outlet Timers</h1>
+	Switch 3 set to turn on : <b>{{ recent_time.switch1on1 }}</b>
 	</br>	
-	Switch 1 off : <b>{{ recent_time.switch1off1 }}</b>	
-		
+	Switch 3 set to turn off : <b>{{ recent_time.switch1off1 }}</b>	
+	</br>	
+	Switch 3 set to turn on : <b>{{ recent_time.switch1on2 }}</b>	
+	</br>	
+	Switch 3 set to turn off : <b>{{ recent_time.switch1off2 }}</b>	
+	</br>
+	</br>
 	{% if form %}
     {{ wtf.quick_form(form) }}
     <br>

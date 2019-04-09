@@ -10,6 +10,8 @@ from app.models import User, Post, Times
 from app.translate import translate
 from app.main import bp
 import sqlalchemy
+import subprocess
+from cron_add import cron_me
 
 
 @bp.before_app_request
@@ -165,10 +167,10 @@ def timeswitches():
     form = TimeForm()
     recent_time = Times.query.order_by(sqlalchemy.desc(Times.timestamp)).first()
     if form.validate_on_submit():
-        #tid = Times.query.get(1)
-        times = Times(switch1on1=form.time1.data, switch1off1=form.time2.data)
+        times = Times(switch1on1=form.time1.data, switch1off1=form.time2.data, switch1on2=form.time3.data, switch1off2=form.time4.data)
         db.session.add(times)
         db.session.commit()
+        cron_me()
         flash(_('Your times have been set!'))
         return redirect(url_for('main.timeswitches'))
     return render_template('timeswitches.html', form=form, recent_time=recent_time)

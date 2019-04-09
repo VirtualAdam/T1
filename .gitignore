@@ -1,9 +1,10 @@
 #the database
 *.db
 #the migrations folder
-/migrations/**
+migrations/
+venv/
 #compile files
 *.pyc
 #logs
 *.log
-/logs/*.log
+logs/
