@@ -13,7 +13,7 @@ def cron_job_setup(time,commandn):
 	t= time.split(':')
 	h=t[0]
 	m=t[1]
-	cron = CronTab(user='pi')
+	cron = CronTab(user='root')
 	job1 = cron.new(command=commandn)
 	job1.hour.on(int(h))
 	job1.minute.on(int(m))
@@ -21,8 +21,8 @@ def cron_job_setup(time,commandn):
 
 def cron_me():
 	data = subprocess.Popen(["crontab", "-r"], stdout=subprocess.PIPE).communicate()[0]
-	app = create_app()
-	app.app_context().push()
+	#app = create_app()
+	#app.app_context().push()
 	recent_time = Times.query.order_by(sqlalchemy.desc(Times.timestamp)).first()
 	t1 = recent_time.switch1on1
 	cron_job_setup(t1,sw3_on)
