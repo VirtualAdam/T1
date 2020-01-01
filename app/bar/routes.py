@@ -5,7 +5,7 @@ from flask_login import current_user, login_required
 from flask_babel import _, get_locale
 from guess_language import guess_language
 from app import db
-from app.models import User, Post
+from app.models import User, Post, Times
 from app.translate import translate
 from app.bar import bp
 import subprocess
@@ -101,3 +101,4 @@ def do(deviceName, action):
             flash(_(actuator+' pressed'))
             publish.single("garagedoor", 'door2', hostname=gateway, qos=0)
     return render_template('switches.html', title=_('Switches'))
+

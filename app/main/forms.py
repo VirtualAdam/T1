@@ -1,9 +1,10 @@
 from flask import request
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, TextAreaField
+from wtforms import StringField, SubmitField, TextAreaField, IntegerField, DateTimeField, BooleanField
 from wtforms.validators import ValidationError, DataRequired, Length
 from flask_babel import _, lazy_gettext as _l
 from app.models import User
+import datetime
 
 
 class EditProfileForm(FlaskForm):
@@ -27,6 +28,12 @@ class PostForm(FlaskForm):
     post = TextAreaField(_l('Say something'), validators=[DataRequired()])
     submit = SubmitField(_l('Submit'))
 
+class TimeForm(FlaskForm):
+    time1 = StringField('Enter Switch 3 on time ex:14:30', validators=[Length(max=5)])
+    time2 = StringField('Enter Switch 3 off time', validators=[Length(max=5)])
+    time3 = StringField('Enter Switch 3 on time', validators=[Length(max=5)])
+    time4 = StringField('Enter Switch 3 off time', validators=[Length(max=5)])
+    submit = SubmitField(_l('Submit'))
 
 class SearchForm(FlaskForm):
     q = StringField(_l('Search'), validators=[DataRequired()])
