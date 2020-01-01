@@ -17,6 +17,8 @@ switch2="sw2"
 switch3="sw3"
 switch4="sw4"
 switch5="sw5"
+door1 = 'garagedoor1'
+door2 = 'garagedoor2'
 
 outlet1_on = "1332531"
 outlet1_off = "1332540"
@@ -88,5 +90,15 @@ def do(deviceName, action):
         if action == "off":
             flash(_(actuator+' off'))
             publish.single("switches", outlet5_off, hostname=gateway, qos=0)
+    if deviceName == "door1":
+        actuator = door1
+        if action == "on":
+            flash(_(actuator+' pressed'))
+            publish.single("garagedoor", 'door1', hostname=gateway, qos=0)
+    if deviceName == "door2":
+        actuator = door2
+        if action == "on":
+            flash(_(actuator+' pressed'))
+            publish.single("garagedoor", 'door2', hostname=gateway, qos=0)
     return render_template('switches.html', title=_('Switches'))
 
